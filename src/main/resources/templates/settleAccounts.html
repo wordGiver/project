@@ -27,7 +27,9 @@
 <p th:text="${price}"></p>
 <p th:text="${mess}"></p>
 <br>
-<a th:href="@{checkOutSuccess(/${member.mid}/${member.score})}" th:if="${member != null}">结账成功</a>
+<a th:href="@{'/checkOutSuccess'}" th:if="${member == null}">结账成功</a>
+
+<a th:href="@{'/checkOutSuccess/'+${member.mid} + '/' + ${member.score}}" th:if="${member != null}">结账成功</a>
 <a href="cashier">返回收银台继续购物</a>
 </body>
 </html>
