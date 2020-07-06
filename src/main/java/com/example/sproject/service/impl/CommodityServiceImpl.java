@@ -43,7 +43,7 @@ public class CommodityServiceImpl implements CommodityService{
         return false;
     }
 
-        @Override
+    @Override
     public boolean delete(Integer cid) {
             if(!commodityDao.findById(cid).isPresent())
                 return false;

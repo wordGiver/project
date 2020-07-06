@@ -1,10 +1,34 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <title>库存系统</title>
 </head>
 <body>
-库存管理
+<h1>员工管理系统</h1>
+
+<a href="insertCommunity">新增商品</a><br>
+<table class="table table-bordered">
+
+    <tr><th>序号</th>
+        <th>ID  </th>
+        <th>名称 </th>
+        <th>价格 </th>
+        <th>数量 </th>
+        <th>操作 </th></tr>
+
+
+    <tr th:each="com:${commodities}">
+        <td th:text="${userStat.index+1}"></td>
+        <td th:text="${com.cid}"></td>
+        <td th:text="${com.name}"></td>
+        <td th:text="${com.price}"></td>
+        <td th:text="${com.quantity}"></td>
+        <td>
+            <a th:href="@{'/inventory/update/' + ${com.getCid}}">修改</a>
+            <a th:href="@{'/inventory/delete/' + ${com.getCid()}}">删除</a>
+        </td>
+    </tr>
+</table>
 </body>
 </html>
