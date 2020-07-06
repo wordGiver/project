@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>login</title>
+</head>
+
+<body>
+<h1>登陆</h1>
+
+<form align="center" action="#" th:action="@{/login}" th:object="${login}" method="post">
+
+    账号:<br><input type="text" th:field = "*{uid}">
+    <br>
+    密码:<br><input type="password" th:field = "*{passwd}" required="required
+">
+    <br><br>
+    <select name="身份" th:field = "*{identity}">
+        <option value="0">经理</option>
+        <option value="1">系统管理员</option>
+        <option value="2">库存管理员</option>
+        <option value="3">售货员</option>
+    </select>
+    <br>
+    <input type="submit" value="登录">
+
+</form>
+</body>
+</html>
+
+
+

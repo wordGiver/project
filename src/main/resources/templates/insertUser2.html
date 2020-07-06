@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>更新系统登陆账户</title>
+</head>
+<body>
+<h2>更新系统登陆账户</h2>
+<form id="form1" th:action="@{insertUser2}" th:method="post" th:object="${login}">
+    <label>员工Id</label>
+    <input type="text" th:field="${login.uid}"/>
+    <label>密码</label>
+    <input type="password" th:filed="${login.passwd}"/>
+    <label>身份</label>
+    <input type="text" th:filed="${login.identity}"/>
+
+    <input th:label="录入登陆信息" type="submit"/>
+
+</form>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <title>员工管理系统</title>
+</head>
+<body>
+<h1>员工管理系统</h1>
+<h4>本系统与FireFox强强联手，在浏览器内支持Ctrl F全字段搜索!!</h4>
+<a href="insertUser">录入员工</a><br>
+<table class="table table-bordered">
+    <tr><th>员工ID  </th>
+        <th>姓名    </th>
+        <th>身份   </th>
+        <th>薪水</th>
+    <th>操作</th></tr>
+
+
+    <tr th:each="user:${Users}">
+        <td th:text="${userStat.index+1}"></td>
+        <td th:text="${user.uid}"></td>
+        <td th:text="${user.name}"></td>
+        <td th:text="${user.identity}"></td>
+        <td th:text="${user.salary}"></td>
+        <td>
+            <a th:href="@{'/employeeManage/update/' + ${user.getUid()}}">修改</a>
+            <a th:href="@{'/employeeManage/delete/' + ${user.getUid()}}">删除</a>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

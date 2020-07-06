@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>更新员工信息</title>
+</head>
+<body>
+<h1 th:inline="text">Insert</h1>
+<form align="center" action="#" th:action="@{/updateUser}" th:object="${user}" method="post">
+
+
+    <label>
+        姓名 :<input type="text" th:field = "*{name}">
+    </label>
+    <br>
+    <label>
+        员工ID:<input type="text" th:field="*{uid}" >
+    </label><br>
+    <label>
+        职务 :<input type="text" th:field = "*{identity}">
+    </label><br>
+    <label>
+        薪水 :<input type="text" th:field = "*{salary}">
+    </label>
+    <br>
+    <input type="submit" value="录入">
+
+</form>
+
+</body>
+</html>
