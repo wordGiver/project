@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>会员专属优惠</title>
+</head>
+<body>
+<h1 th:inline="text">核对会员信息</h1>
+<form align="center" action="#" th:action="@{/settleAccountsMember}" th:object="${member}" method="post">
+
+
+    <label>
+        会员Id :<input type="text" th:field = "${member.mid}" required="required">
+    </label>
+
+    <br>
+    <input type="submit" value="核验">
+</form>
+
+</body>
+</html>
