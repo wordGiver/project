@@ -2,11 +2,11 @@
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
-    <title>更新货物信息</title>
+    <title>新增货物</title>
 </head>
 <body>
-<h1 th:inline="text">Update</h1>
-<form align="center" action="#" th:action="@{/commodityUpdate}" th:object="${commodity}" method="post">
+<h1 th:inline="text">Insert</h1>
+<form align="center" action="#" th:action="@{/insertCommodity}" th:object="${commodity}" method="post">
 
 
     <label>
@@ -24,7 +24,6 @@
     </label>
     <br>
     <input type="submit" value="确定">
-
 </form>
 
 </body>

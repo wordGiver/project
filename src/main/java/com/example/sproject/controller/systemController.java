@@ -33,9 +33,9 @@ public class systemController {
         loginService.delete(uid);
         return "redirect:/employeeManage";
     }
+
     @GetMapping("/insertUser")
-    public String getInsertUser(@ModelAttribute User user)
-    {
+    public String getInsertUser(@ModelAttribute User user) {
         return "insertUser";
     }
     @PostMapping("/insertUser")

@@ -1,7 +1,9 @@
 package com.example.sproject.controller;
 
 import com.example.sproject.entity.Commodity;
+import com.example.sproject.entity.User;
 import com.example.sproject.service.CommodityService;
+import com.example.sproject.service.impl.CommodityServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -15,30 +17,35 @@ public class CommodityController {
     @Autowired
     private CommodityService commodityService;
 
-    @GetMapping("/insertCommunity")
-    public String insertCommdity(){
-        return null;
-    }
-
     @GetMapping("/inventory")
     public String inventory(Model model){
         model.addAttribute("commodities",commodityService.getAllCom());
         return "inventory";
     }
 
-    @GetMapping("inventory/delete/{Cid}")
+    @GetMapping("/insertCommunity")
+    public String insertInventory(@ModelAttribute Commodity commodity){
+        return "insertCommodity";
+    }
+    @PostMapping("/insertCommodity")
+    public String insertCommodity(@ModelAttribute Commodity commodity){
+        commodityService.insert(commodity);
+        return "redirect:/inventory";
+    }
+
+    @GetMapping("inventory/delete/{cid}")
     public String commodityDelete(@PathVariable Integer cid){
         commodityService.delete(cid);
         return "redirect:/inventory";
     }
 
-    @GetMapping("inventory/update/{Cid}")
+    @GetMapping("inventory/update/{cid}")
     public String inventoryUpdate(@PathVariable Integer cid,Model model){
         model.addAttribute("commodity",commodityService.getComById(cid));
         return "commodityUpdate";
     }
 
-    @PostMapping("/commodity")
+    @PostMapping("/commodityUpdate")
     public String commodityUpdate(@ModelAttribute Commodity commodity){
         commodityService.update(commodity);
         return "redirect:/inventory";
