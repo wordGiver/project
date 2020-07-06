@@ -1,10 +1,45 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <title>连锁商店收银平台</title>
 </head>
 <body>
-连锁商店收银平台
+<h1>连锁商店收银平台</h1>
+<table class="table table-bordered">
+
+    <tr><th>商品序号 </th>
+        <th>商品条形码  </th>
+        <th>商品名    </th>
+        <th>商品数量   </th>
+        <th>原价</th>
+        <th>折扣价</th>
+        <th>操作</th>
+    </tr>
+    <tr th:each="commodity:${Commoditys}">
+        <td th:text="${commodityStat.index+1}"></td>
+        <td th:text="${commodity.cid}"></td>
+        <td th:text="${commodity.name}"></td>
+        <td th:text="${commodity.quantity}"></td>
+        <td th:text="${commodity.price}"></td>
+        <td th:text="${commodity.discount * commodity.price} * 0.1"></td>
+        <td>
+            <a th:href="@{'/cashier/update/' + ${commodity.getCid()}}">修改数量</a>
+            <a th:href="@{'/cashier/delete/' + ${commodity.getCid()}}">删除商品</a>
+        </td>
+    </tr>
+</table>
+<a href="addCommodity">添加商品至收银台</a>
+<br>
+<a href="settleAccounts">直接结账</a>
+<br>
+<a href="settleAccountsMember">会员结账</a>
+<br>
+<a href="registerMember">注册会员</a>
+
 </body>
 </html>

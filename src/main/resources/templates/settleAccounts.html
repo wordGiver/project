@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>结账</title>
+    <style>
+        a:link,a:visited
+        {
+            display:block;
+            font-weight:bold;
+            color:#FFFFFF;
+            background-color:#98bf21;
+            width:120px;
+            text-align:center;
+            padding:4px;
+            text-decoration:none;
+        }
+        a:hover,a:active
+        {
+            background-color:#7A991A;
+        }
+    </style>
+</head>
+<body>
+<h1>结账</h1>
+您需支付的总金额为
+<p th:text="${price}"></p>
+<p th:text="${mess}"></p>
+<br>
+<a th:href="@{'/checkOutSuccess'}" th:if="${member == null}">结账成功</a>
+
+<a th:href="@{'/checkOutSuccess/'+${member.mid} + '/' + ${member.score}}" th:if="${member != null}">结账成功</a>
+<a href="cashier">返回收银台继续购物</a>
+</body>
+</html>

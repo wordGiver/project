@@ -46,7 +46,7 @@ CREATE TABLE `Member`(
     `phone` varchar(15),
     `score` int(25) ,
     PRIMARY KEY (`mid`)
-)ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COMMENT='会员';
+)ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COMMENT='会员';
 
 DROP TABLE IF EXISTS `Commodity`;
 CREATE TABLE `Commodity`(
@@ -66,8 +66,12 @@ CREATE TABLE `Commodity`(
 BEGIN;
 INSERT INTO `Login` VALUES ('18080123', '123456','0'), ('18080120','123456','1'),('18080121','123456',2),('18080122','123456',3),('18080119','123456','3'),(18080118,123456,3);
 INSERT INTO `User`  VALUES ('18080123','高健','0','10000'),('18080120','张三','1','8000'),('18080121','李四','2','5000'),('18080122','王五','3','3500'),('18080119','猫猫','3','3500'),('18080118','德莱文','3','3200');
+
 INSERT INTO `Commodity` VALUES ('5999','ipad',8848,50,1),('299','鼠标',1999,20,1),('3366','康师傅方便面',3,100,1),(1422,'冰红茶',3,50,1);
 INSERT INTO `Member` VALUES ('123','卡特','180141245','152'),('124','瑞文','1842447242','243'),('127','赵信','181234455','501'),('185','塞纳','1248792441','780');
+
+
+
 
 COMMIT;
 

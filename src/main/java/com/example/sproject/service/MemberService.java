@@ -15,4 +15,6 @@ public interface MemberService {
     boolean delete(Integer mid);
 
     Member getUserById(int mid);
+
+    int getLastMid();
 }

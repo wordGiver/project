@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>添加商品</title>
+</head>
+<body>
+
+<h1 th:inline="text">添加商品</h1>
+<form align="center" action="#" th:action="@{/addCommodity}" th:object="${commodity}" method="post">
+
+
+    <label>
+        商品条形码 :<input type="text" th:field = "${commodity.cid}">
+    </label>
+    <label>
+        商品数量 : <input type="text" th:field="${commodity.quantity}">
+    </label>
+
+    <br>
+
+    <input type="submit" value="加入">
+</form>
+
+
+</body>
+</html>
