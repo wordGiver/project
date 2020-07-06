@@ -34,7 +34,7 @@ public class LoginController {
                 case 1:
                     return "employeeSystem";
                 case 2:
-                    return "inventory";
+                    return "redirect:/inventory";
                 case 3:
                     return "cashier";
 

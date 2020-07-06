@@ -12,8 +12,8 @@ public class CommodityServiceImpl implements CommodityService{
     private CommodityDao commodityDao;
 
     @Override
-    public List<Commodity> getAllCom() {
-        return commodityDao.findAll();
+    public List<Commodity> getAllCom(){
+    return commodityDao.findAll();
     }
 
     @Override
@@ -43,7 +43,7 @@ public class CommodityServiceImpl implements CommodityService{
         return false;
     }
 
-        @Override
+    @Override
     public boolean delete(Integer cid) {
             if(!commodityDao.findById(cid).isPresent())
                 return false;
@@ -60,6 +60,5 @@ public class CommodityServiceImpl implements CommodityService{
             return commodityDao.findById(cid).get();
         else
             return null;
-
     }
 }
