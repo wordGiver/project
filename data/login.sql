@@ -54,7 +54,7 @@ CREATE TABLE `Commodity`(
                             `name` varchar(100) CHARACTER SET utf8,
                             `price` double(11,2) NOT NULL ,
                             `quantity` int(11) DEFAULT 0,
-                            `discount` double(3,1) DEFAULT 10.0,
+                            `discount` double(3,1) DEFAULT 1.0,
 
                             primary key (`cid`)
 )ENGINE=InnoDB AUTO_INCREMENT=1 Comment '商品';

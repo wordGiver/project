@@ -49,7 +49,7 @@ public class CommodityServiceImpl implements CommodityService{
                 return false;
             else
             {
-                commodityDao.delete(commodityDao.findById(cid).get());
+                commodityDao.delete(commodityDao.findById(cid).orElse(null));
                 return true;
             }
     }
@@ -57,7 +57,7 @@ public class CommodityServiceImpl implements CommodityService{
     @Override
     public Commodity getComById(int cid) {
         if(commodityDao.findById(cid).isPresent())
-            return commodityDao.findById(cid).get();
+            return commodityDao.findById(cid).orElse(null);
         else
             return null;
     }
