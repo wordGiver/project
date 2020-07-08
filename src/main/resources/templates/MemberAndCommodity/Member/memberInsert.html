@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>新增会员</title>
+</head>
+<body>
+<h1 th:inline="text">Insert</h1>
+<form align="center" action="#" th:action="@{/memberInsert}" th:object="${member}" method="post">
+
+
+    <label>
+        名称 :<input type="text" th:field = "*{name}">
+    </label>
+    <br>
+    <label>
+        ID  :<input type="text" th:field="*{mid}" >
+    </label><br>
+    <label>
+        价格 :<input type="text" th:field = "*{price}">
+    </label><br>
+    <label>
+        库存 :<input type="text" th:field = "*{quantity}">
+    </label>
+    <br>
+    <input type="submit" value="确定">
+</form>
+
+</body>
+</html>
