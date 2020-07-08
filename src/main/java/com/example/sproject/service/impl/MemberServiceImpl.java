@@ -62,4 +62,10 @@ public class MemberServiceImpl implements MemberService {
         else
             return null;
     }
+
+    @Override
+    public int getLastMid()
+    {
+        return memberDao.getLastMid();
+    }
 }

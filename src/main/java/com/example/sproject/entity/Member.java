@@ -15,13 +15,9 @@ public class Member {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer mid;
     private   String name;
-    private   Double price;
-    private   Integer quantity;
-    private   Double discount;
+    private   double score;
+    private   String phone;
 
-    public double getTruePrice()
-    {
-        return price*discount;
-    }
+
 
 }

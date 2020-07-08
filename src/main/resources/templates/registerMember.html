@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>注册会员</title>
+</head>
+<body>
+<h1>会员注册系统</h1>
+<form align="center" action="#" th:action="@{/registerMember}" th:object="${member}" method="post">
+
+
+    <label>
+        姓名 :<input type="text" th:field = "*{name}">
+    </label>
+    <br>
+    <label>
+        电话 :<input type="text" th:field = "*{phone}">
+    </label><br>
+    <br>
+    <input type="submit" value="录入">
+
+</form>
+</body>
+</html>
