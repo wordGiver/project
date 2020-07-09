@@ -23,7 +23,7 @@ public class LoginController {
 
 
     @PostMapping("/login")
-    public String loginSubmit(@ModelAttribute Login login) {
+    public String loginSubmit(@ModelAttribute Login login,Model model) {
         if(loginService.checkExistUid(login.getUid())  && loginService.checkPasswd(login.getUid(), login.getPasswd(), login.getIdentity()) )
         {
             switch (login.getIdentity())
@@ -41,10 +41,18 @@ public class LoginController {
             }
 
         }
-        else
+        else {
             System.out.println("Hello World");
-
+            model.addAttribute("err","err");
+            return "loginError";
+        }
         return "login";
+    }
+
+    @GetMapping("/loginError")
+    public String getLoginError()
+    {
+        return "loginError";
     }
 
 

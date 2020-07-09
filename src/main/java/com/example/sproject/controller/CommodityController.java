@@ -2,6 +2,8 @@ package com.example.sproject.controller;
 
 import com.example.sproject.entity.Commodity;
 import com.example.sproject.service.CommodityService;
+import com.example.sproject.service.LogService;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -10,10 +12,14 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import java.util.Date;
+
 @Controller
 public class CommodityController {
     @Autowired
     private CommodityService commodityService;
+    @Autowired
+    private LogService logservice;
 
     @GetMapping("/inventory")
     public String inventory(Model model){
@@ -33,7 +39,13 @@ public class CommodityController {
 
     @GetMapping("inventory/delete/{cid}")
     public String commodityDelete(@PathVariable Integer cid){
+        if(commodityService.getComById(cid) != null)
+        {
+            Date cNow=new Date();
+           logservice.insert(cNow,"delete",cid,commodityService.getComById(cid).getName(),1);
+        }
         commodityService.delete(cid);
+
         return "redirect:/inventory";
     }
 
