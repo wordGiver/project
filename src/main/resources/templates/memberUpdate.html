@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>更新会员信息</title>
+</head>
+<body>
+<h1 th:inline="text">Update</h1>
+<form align="center" action="#" th:action="@{/memberUpdate}" th:object="${member}" method="post">
+
+
+    <label>
+        姓名 :<input type="text" th:field = "*{name}">
+    </label>
+    <br>
+    <label>
+        ID  :<input type="text" th:field="*{mid}" >
+    </label><br>
+    <label>
+        积分 :<input type="text" th:field = "*{score}">
+    </label><br>
+    <label>
+        手机号 :<input type="text" th:field = "*{phone}">
+    </label>
+    <br>
+    <input type="submit" value="确定">
+
+</form>
+</body>
+</html>

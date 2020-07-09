@@ -50,7 +50,7 @@ public class MemberServiceImpl implements MemberService {
             return false;
         else
         {
-            memberDao.delete(memberDao.findById(mid).get());
+            memberDao.delete(memberDao.findById(mid).orElse(null));
             return true;
         }
     }
@@ -58,7 +58,7 @@ public class MemberServiceImpl implements MemberService {
     @Override
     public Member getUserById(int mid) {
         if(memberDao.findById(mid).isPresent())
-            return memberDao.findById(mid).get();
+            return memberDao.findById(mid).orElse(null);
         else
             return null;
     }
