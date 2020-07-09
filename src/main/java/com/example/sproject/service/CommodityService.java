@@ -14,4 +14,5 @@ public interface CommodityService {
     boolean delete(Integer cid);
 
     Commodity getComById(int cid);
+
 }

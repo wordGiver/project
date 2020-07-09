@@ -2,13 +2,18 @@
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
-    <title>会员管理系统</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <title>库存系统</title>
 </head>
 <body>
-<a href="insertCommunity">新增会员</a><br>
+<h1>仓库管理系统</h1>
+
+<a href="insertCommunity">新增商品</a><br>
 <table class="table table-bordered">
-    <tr><th>全选<input type="checkbox" id="check"> </th>
-        <th>序号</th>
+    <tr><th>序号</th>
         <th>ID  </th>
         <th>名称 </th>
         <th>价格 </th>
@@ -16,7 +21,6 @@
         <th>操作 </th></tr>
 
     <tr th:each="commodity:${commodities}">
-        <td><input type="checkbox" name="user"></td>
         <td th:text="${commodityStat.index+1}"></td>
         <td th:text="${commodity.cid}"></td>
         <td th:text="${commodity.name}"></td>
@@ -27,7 +31,7 @@
             <a th:href="@{'/inventory/delete/' + ${commodity.getCid()}}">删除</a>
         </td>
     </tr>
-    <input type="submit" value="赠送礼物">
 </table>
+
 </body>
 </html>

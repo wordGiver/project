@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <title>会员管理系统</title>
+</head>
+<body>
+<a href="memberInsert">新增会员</a><br>
+<form action="#"th:action="@{/memberManagement}" th:object=${member} method="post">
+    <table class="table table-bordered">
+            <th>序号</th>
+            <th>ID  </th>
+            <th>姓名 </th>
+            <th>积分 </th>
+            <th>手机号 </th>
+            <th>操作 </th></tr>
+
+        <tr th:each="member:${members}">
+            <td th:text="${memberStat.index+1}"></td>
+            <td th:text="${member.mid}"></td>
+            <td th:text="${member.name}"></td>
+            <td th:text="${member.score}"></td>
+            <td th:text="${member.phone}"></td>
+            <td>
+                <a th:href="@{'/memberManagement/update/' + ${member.getMid()}}">修改</a>
+                <a th:href="@{'/memberManagement/delete/' + ${member.getMid()}}">删除</a>
+                <a th:href="@{'/memberManagement/sendGifts/' + ${member.getMid()}}">赠送礼物</a>
+            </td>
+        </tr>
+    </table>
+</form>
+    </body>
+</html>
