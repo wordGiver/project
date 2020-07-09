@@ -5,6 +5,7 @@ package com.example.sproject.controller;
 import com.example.sproject.entity.Commodity;
 import com.example.sproject.entity.Member;
 import com.example.sproject.service.CommodityService;
+import com.example.sproject.service.LogService;
 import com.example.sproject.service.MemberService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -15,6 +16,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 
@@ -24,6 +26,8 @@ public class CashierController {
     private CommodityService commodityService;
     @Autowired
     private MemberService memberService;
+    @Autowired
+    private LogService logService;
     private List<Commodity>  checkOut;
 
 
@@ -118,7 +122,10 @@ public class CashierController {
         for(int i=0; i<checkOut.size(); i++)
         {
             Commodity com = commodityService.getComById(checkOut.get(i).getCid());
-            com.setQuantity(com.getQuantity() - checkOut.get(i).getQuantity());
+            int t=checkOut.get(i).getQuantity();
+            Date dNow=new Date();
+            logService.insert(dNow,"cashier",com.getCid(),com.getName(),t);
+            com.setQuantity(com.getQuantity() - t);
             commodityService.update(com);
         }
         checkOut.clear();
@@ -131,7 +138,10 @@ public class CashierController {
         for(int i=0; i<checkOut.size(); i++)
         {
             Commodity com = commodityService.getComById(checkOut.get(i).getCid());
-            com.setQuantity(com.getQuantity() - checkOut.get(i).getQuantity());
+            int t= checkOut.get(i).getQuantity();
+            Date dNow = new Date();
+            logService.insert(dNow,"cashier",com.getCid(),com.getName(),t);
+            com.setQuantity(com.getQuantity()-t);
             commodityService.update(com);
             Member mem = memberService.getUserById(mid);
             mem.setScore(score);

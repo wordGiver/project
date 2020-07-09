@@ -1,0 +1,28 @@
+2020-07-06 23:07:47.329  INFO 11104 --- [main] c.example.sproject.SprojectApplication   : Starting SprojectApplication on LAPTOP-OUSUKPTM with PID 11104 (D:\IdeaProjects\sproject\target\classes started by Y700 in D:\IdeaProjects\sproject)
+2020-07-06 23:07:47.331  INFO 11104 --- [main] c.example.sproject.SprojectApplication   : No active profile set, falling back to default profiles: default
+2020-07-06 23:07:48.239  INFO 11104 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2020-07-06 23:07:48.344  INFO 11104 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 93ms. Found 4 JPA repository interfaces.
+2020-07-06 23:07:48.877  INFO 11104 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-07-06 23:07:48.888  INFO 11104 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-07-06 23:07:48.888  INFO 11104 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.36]
+2020-07-06 23:07:49.019  INFO 11104 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-07-06 23:07:49.019  INFO 11104 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1643 ms
+2020-07-06 23:07:49.167  INFO 11104 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-07-06 23:07:49.222  INFO 11104 --- [task-1] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-07-06 23:07:49.307  WARN 11104 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-07-06 23:07:49.372  INFO 11104 --- [task-1] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.17.Final
+2020-07-06 23:07:49.685  INFO 11104 --- [task-1] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-07-06 23:07:49.695  INFO 11104 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-07-06 23:07:49.765  WARN 11104 --- [main] org.thymeleaf.templatemode.TemplateMode  : [THYMELEAF][main] Template Mode 'LEGACYHTML5' is deprecated. Using Template Mode 'HTML' instead.
+2020-07-06 23:07:49.809  INFO 11104 --- [task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-07-06 23:07:50.013  INFO 11104 --- [task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-07-06 23:07:50.028  INFO 11104 --- [task-1] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2020-07-06 23:07:50.436  INFO 11104 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2020-07-06 23:07:50.438  INFO 11104 --- [main] DeferredRepositoryInitializationListener : Triggering deferred initialization of Spring Data repositories…
+2020-07-06 23:07:50.720  INFO 11104 --- [task-1] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-07-06 23:07:50.724  INFO 11104 --- [task-1] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-07-06 23:07:50.915  INFO 11104 --- [main] DeferredRepositoryInitializationListener : Spring Data repositories initialized!
+2020-07-06 23:07:50.922  INFO 11104 --- [main] c.example.sproject.SprojectApplication   : Started SprojectApplication in 4.047 seconds (JVM running for 5.479)
+2020-07-06 23:07:58.977  INFO 11104 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-07-06 23:07:58.978  INFO 11104 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-07-06 23:07:58.985  INFO 11104 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 7 ms

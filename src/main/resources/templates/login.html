@@ -4,6 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <title>login</title>
+
+
+
 </head>
 
 <body>
@@ -11,9 +14,9 @@
 
 <form align="center" action="#" th:action="@{/login}" th:object="${login}" method="post">
 
-    账号:<br><input type="text" th:field = "*{uid}">
+    账号:<br><input type="text" th:field = "*{uid}" >
     <br>
-    密码:<br><input type="password" th:field = "*{passwd}" required="required">
+    密码:<br><input type="password" th:field = "*{passwd}" required="required" >
     <br><br>
     <select name="身份" th:field = "*{identity}">
         <option value="0">经理</option>
@@ -23,7 +26,6 @@
     </select>
     <br>
     <input type="submit" value="登录">
-
 </form>
 </body>
 </html>
